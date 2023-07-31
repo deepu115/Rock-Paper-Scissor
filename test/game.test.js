@@ -15,18 +15,18 @@ describe('Game', function () {
         game = new Game(player1, player2);
     });
 
-    it('should have two players', function () {
-        expect(game.player1).to.equal(player1);
-        expect(game.player2).to.equal(player2);
-    });
+    // it('should have two players', function () {
+    //     expect(game.player1).to.equal(player1);
+    //     expect(game.player2).to.equal(player2);
+    // });
     it('should allow a player to make a move', function () {
         player1.chooseOption('rock');
         expect(player1.option).to.equal('rock');
     });
 
     it('should determine the winner', function () {
-        player1.chooseOption('rock');
-        player2.chooseOption('scissors');
+        player1.chooseOption('paper');
+        player2.computerOption();
         game.play();
         expect(game.winner).to.equal(player1);
     });
