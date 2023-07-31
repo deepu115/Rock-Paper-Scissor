@@ -24,6 +24,11 @@ describe('Game', function () {
         expect(player1.option).to.equal('rock');
     });
 
-
+    it('should determine the winner', function () {
+        player1.chooseOption('rock');
+        player2.chooseOption('scissors');
+        game.play();
+        expect(game.winner).to.equal(player1);
+    });
 
 });
