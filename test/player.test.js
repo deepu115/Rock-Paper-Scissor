@@ -11,4 +11,5 @@ describe('Player', function () {
     it('Should return player name', function () {
         expect(player.getName()).to.equal('Player 1');
     });
+
 });
