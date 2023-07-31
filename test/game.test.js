@@ -19,7 +19,10 @@ describe('Game', function () {
         expect(game.player1).to.equal(player1);
         expect(game.player2).to.equal(player2);
     });
-
+    it('should allow a player to make a move', function () {
+        player1.chooseOption('rock');
+        expect(player1.option).to.equal('rock');
+    });
 
 
 
