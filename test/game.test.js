@@ -1,34 +1,24 @@
-const chai = require('chai');
-const expect = chai.expect;
+import { expect } from 'chai';
+import Game from '../src/Game.js';
 
-const Game = require('../src/Game.js');
-const Player = require('../src/Player.js');
 
-describe('Game', function () {
+describe('Game logic', () => {
     let game;
-    let player1;
-    let player2;
 
-    beforeEach(function () {
-        player1 = new Player('Player1');
-        player2 = new Player('Computer');
-        game = new Game(player1, player2);
+    beforeEach(() => {
+        game = new Game();
     });
-
-    // it('should have two players', function () {
-    //     expect(game.player1).to.equal(player1);
-    //     expect(game.player2).to.equal(player2);
-    // });
-    it('should allow a player to make a move', function () {
-        player1.chooseOption('rock');
-        expect(player1.option).to.equal('rock');
+    describe('Computer Choice', () => {
+        it('should return a valid option', () => {
+            const option = game.botOption();
+            expect(game.options).to.include(option);
+        });
     });
-
-    it('should determine the winner', function () {
-        player1.chooseOption('paper');
-        player2.computerOption();
-        game.play();
-        expect(game.winner).to.equal(player1);
+    describe('Result', () => {
+        it('should return a valid outcome', () => {
+            const outcomes = ['It\'s a draw!', 'You win!', 'You lose!'];
+            const result = game.result('rock');
+            expect(outcomes).to.include(result.result);
+        });
     });
-
 });

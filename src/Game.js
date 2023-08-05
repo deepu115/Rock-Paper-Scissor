@@ -1,16 +1,22 @@
-const Player = require('./Player.js');
 class Game {
-    constructor(player1, player2) {
-        this.player1 = player1;
-        this.player2 = new Player();
-        this.winner = null;
+    constructor() {
+        this.options = ['rock', 'paper', 'scissors'];
+        this.results = {
+            'rock': { 'rock': 'It\'s a draw!', 'paper': 'You lose!', 'scissors': 'You win!' },
+            'paper': { 'rock': 'You win!', 'paper': 'It\'s a draw!', 'scissors': 'You lose!' },
+            'scissors': { 'rock': 'You lose!', 'paper': 'You win!', 'scissors': 'It\'s a draw!' }
+        };
     }
-    play() {
-        this.player2.computerOption();
-        const rules = { 'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper' };
-        this.winner = rules[this.player1.option] === this.player2.option ? this.player1 : this.player2;
+    botOption() {
+        return this.options[Math.floor(Math.random() * this.options.length)];
     }
+    result(playerChoice) {
+        const computerChoice = this.botOption();
+        return {
+            result: this.results[playerChoice][computerChoice],
+            computerChoice: computerChoice
+        }
+    }
+
 }
-
-
-module.exports = Game;
+export default Game;
