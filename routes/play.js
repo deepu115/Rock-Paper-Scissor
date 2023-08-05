@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 
-router.post('/', (req, res) => {
+router.post('/setName', (req, res) => {
     req.app.locals.playerName = req.body.name;
     res.redirect('/play');
 });
