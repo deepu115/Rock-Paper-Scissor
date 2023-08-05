@@ -4,6 +4,7 @@ const port = 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 
 import index from './routes/index.js';
@@ -14,6 +15,7 @@ import result from './routes/result.js';
 app.use('/', index);
 app.use('/', play);
 app.use('/', result);
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
