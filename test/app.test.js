@@ -37,8 +37,15 @@ describe('Integration tests for Rock-Paper-Scissors game', () => {
                 done();
             });
     });
-
-
+    it('should handle invalid game choices', (done) => {
+        chai.request(app)
+            .post('/result')
+            .send({ choice: 'invalid_choice' })
+            .end((err, res) => {
+                expect(res).to.have.status(500);
+                done();
+            });
+    });
 
 });
 
