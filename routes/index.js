@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/singlePlayer', (req, res) => {
-    res.render('index');
+    res.render('index', { mode: 'single' });
 });
 
 router.post('/setName', (req, res) => {
@@ -10,7 +10,7 @@ router.post('/setName', (req, res) => {
     res.redirect('/play');
 });
 router.get('/multiPlayer', (req, res) => {
-    res.render('multiIndex');
+    res.render('index', { mode: 'multi' });
 });
 
 router.post('/setMultiNames', (req, res) => {
@@ -20,3 +20,4 @@ router.post('/setMultiNames', (req, res) => {
 });
 
 export default router;
+

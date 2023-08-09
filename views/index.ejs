@@ -11,7 +11,7 @@
     <title>Rock Paper Scissors</title>
 </head>
 
-<body>
+<body style="height: 100%">
     <nav class="navbar sticky-top justify-content-center">
         <img src="https://images.squarespace-cdn.com/content/v1/618037d25050485b61e7f62d/271f0feb-c872-4eb6-b918-3e9c8e38443c/Rock+Paper+Scissors+Logo.png"
             alt="logo" width="44" height="40" class="d-inline-block align-text-top">
@@ -20,14 +20,28 @@
     <div class="container">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="col-md-6 text-center">
-                <h1>Welcome!</h1>
-                <h2 class="mt-5">Enter your name:</h2>
-                <form action="/setName" method="post" class="mt-3">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-3">Start Game</button>
-                </form>
+                <% if (mode==='single' ) { %>
+                    <h1>Welcome!</h1>
+                    <h2 class="mt-5">Enter your name:</h2>
+                    <form action="/setName" method="post" class="mt-3">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Start Game</button>
+                    </form>
+                    <% } else { %>
+                        <h1>Welcome to Multiplayer Mode!</h1>
+                        <h2 class="mt-5">Enter names for both players:</h2>
+                        <form action="/setMultiNames" method="post" class="mt-3">
+                            <div class="form-group">
+                                <input type="text" id="player1Name" name="player1Name" class="form-control mb-2"
+                                    placeholder="Player 1 Name" required>
+                                <input type="text" id="player2Name" name="player2Name" class="form-control"
+                                    placeholder="Player 2 Name" required>
+                            </div>
+                            <button type="submit" class="btn btn-info mt-3">Start Multiplayer Game</button>
+                        </form>
+                        <% } %>
             </div>
         </div>
     </div>

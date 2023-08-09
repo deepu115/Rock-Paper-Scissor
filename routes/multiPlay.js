@@ -18,7 +18,7 @@ router.post('/multiPlay/player1Choice', (req, res) => {
 
 router.post('/multiPlay/player2Choice', (req, res) => {
     req.app.locals.player2Choice = req.body.choice;
-    res.redirect('/result');
+    res.redirect('/multiResult');
 });
 
 export default router;

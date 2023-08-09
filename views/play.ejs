@@ -24,12 +24,11 @@
                     <h1>Hello, <%= name %>!</h2>
                             <h2 class="mt-5">Choose your move:</h2>
                             <form action="/play" method="post" class="mt-3">
-                                <button type="submit" name="choice" value="rock"
-                                    class="btn btn-secondary mr-3">Rock</button>
+                                <button type="submit" name="choice" value="rock" class="btn btn-info mr-3">Rock</button>
                                 <button type="submit" name="choice" value="paper"
-                                    class="btn btn-secondary mr-3">Paper</button>
+                                    class="btn btn-info mr-3">Paper</button>
                                 <button type="submit" name="choice" value="scissors"
-                                    class="btn btn-secondary">Scissors</button>
+                                    class="btn btn-info">Scissors</button>
                             </form>
                 </div>
             </div>
@@ -42,16 +41,16 @@
                                 <h2 class="mt-5">Choose your move:</h2>
                                 <form action="/multiPlay/player1Choice" method="post" class="mt-3">
                                     <button type="submit" name="choice" value="rock"
-                                        class="btn btn-secondary mr-3">Rock</button>
+                                        class="btn btn-info mr-3">Rock</button>
                                     <button type="submit" name="choice" value="paper"
-                                        class="btn btn-secondary mr-3">Paper</button>
+                                        class="btn btn-info mr-3">Paper</button>
                                     <button type="submit" name="choice" value="scissors"
-                                        class="btn btn-secondary">Scissors</button>
+                                        class="btn btn-info">Scissors</button>
                                 </form>
                     </div>
                 </div>
             </div>
-            <% }else if(mode==='multi' && step==='player2' ){%>
+            <% }else {%>
                 <div class="container">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="col-md-6">
@@ -59,11 +58,11 @@
                                     <h2 class="mt-5">Choose your move:</h2>
                                     <form action="/multiPlay/player2Choice" method="post" class="mt-3">
                                         <button type="submit" name="choice" value="rock"
-                                            class="btn btn-secondary mr-3">Rock</button>
+                                            class="btn btn-info mr-3">Rock</button>
                                         <button type="submit" name="choice" value="paper"
-                                            class="btn btn-secondary mr-3">Paper</button>
+                                            class="btn btn-info mr-3">Paper</button>
                                         <button type="submit" name="choice" value="scissors"
-                                            class="btn btn-secondary">Scissors</button>
+                                            class="btn btn-info">Scissors</button>
                                     </form>
                         </div>
                     </div>
