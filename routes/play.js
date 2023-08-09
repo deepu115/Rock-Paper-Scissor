@@ -2,13 +2,17 @@ import express from 'express';
 const router = express.Router();
 
 
-router.post('/setName', (req, res) => {
-    req.app.locals.playerName = req.body.name;
-    res.redirect('/play');
+router.get('/play', (req, res) => {
+    const playerName = req.app.locals.playerName;
+    const gameMode = req.app.locals.gameMode || 'single';
+    res.render('play', { name: playerName, mode: gameMode });
 });
 
-router.get('/play', (req, res) => {
-    res.render('play', { name: req.app.locals.playerName });
+router.post('/play', (req, res) => {
+    req.app.locals.playerChoice = req.body.choice;
+    res.redirect('/result');
 });
+
+
 
 export default router;

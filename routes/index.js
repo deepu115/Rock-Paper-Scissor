@@ -1,10 +1,22 @@
-import express from "express";
+import express from 'express';
 const router = express.Router();
 
-
-router.get('/', (req, res) => {
+router.get('/singlePlayer', (req, res) => {
     res.render('index');
 });
 
+router.post('/setName', (req, res) => {
+    req.app.locals.playerName = req.body.name;
+    res.redirect('/play');
+});
+router.get('/multiPlayer', (req, res) => {
+    res.render('multiIndex');
+});
+
+router.post('/setMultiNames', (req, res) => {
+    req.app.locals.player1Name = req.body.player1Name;
+    req.app.locals.player2Name = req.body.player2Name;
+    res.redirect('/multiPlay');
+});
 
 export default router;

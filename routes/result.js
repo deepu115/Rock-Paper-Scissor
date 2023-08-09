@@ -5,9 +5,14 @@ const router = express.Router();
 
 const game = new Game();
 
-router.post('/result', (req, res) => {
-    const playerChoice = req.body.choice;
-    const result = game.result(playerChoice);
-    res.render('result', { name: req.app.locals.playerName, choice: playerChoice, computerChoice: result.computerChoice, result: result.result });
+router.get('/result', (req, res) => {
+    const playerChoice = req.app.locals.playerChoice;
+    const gameResult = game.result(playerChoice);
+    res.render('result', {
+        playerName: req.app.locals.playerName,
+        playerChoice: playerChoice,
+        computerChoice: gameResult.computerChoice,
+        result: gameResult.result
+    });
 });
 export default router;

@@ -17,25 +17,61 @@
             alt="logo" width="44" height="40" class="d-inline-block align-text-top">
         <a class="nav-link active" aria-current="page" href="/"><span>Rock Paper Scissors</span></a>
     </nav>
-    <div class="container">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-6">
-                <h1>Hello, <%= name %>!</h2>
-                        <h2 class="mt-5">Choose your move:</h2>
-                        <form action="/result" method="post" class="mt-3">
-                            <button type="submit" name="choice" value="rock"
-                                class="btn btn-secondary mr-3">Rock</button>
-                            <button type="submit" name="choice" value="paper"
-                                class="btn btn-secondary mr-3">Paper</button>
-                            <button type="submit" name="choice" value="scissors"
-                                class="btn btn-secondary">Scissors</button>
-                        </form>
+    <% if(mode==='single' ){ %>
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-6">
+                    <h1>Hello, <%= name %>!</h2>
+                            <h2 class="mt-5">Choose your move:</h2>
+                            <form action="/play" method="post" class="mt-3">
+                                <button type="submit" name="choice" value="rock"
+                                    class="btn btn-secondary mr-3">Rock</button>
+                                <button type="submit" name="choice" value="paper"
+                                    class="btn btn-secondary mr-3">Paper</button>
+                                <button type="submit" name="choice" value="scissors"
+                                    class="btn btn-secondary">Scissors</button>
+                            </form>
+                </div>
             </div>
         </div>
-    </div>
-    <footer class="footer mt-auto py-3 text-center sticky-bottom">
-        <span>© 2023 Rock Paper Scissors Game. All rights reserved.</span>
-    </footer>
+        <% } else if (mode==='multi' && step==='player1' ){ %>
+            <div class="container">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="col-md-6">
+                        <h1>Hello, <%= player1Name %>!</h2>
+                                <h2 class="mt-5">Choose your move:</h2>
+                                <form action="/multiPlay/player1Choice" method="post" class="mt-3">
+                                    <button type="submit" name="choice" value="rock"
+                                        class="btn btn-secondary mr-3">Rock</button>
+                                    <button type="submit" name="choice" value="paper"
+                                        class="btn btn-secondary mr-3">Paper</button>
+                                    <button type="submit" name="choice" value="scissors"
+                                        class="btn btn-secondary">Scissors</button>
+                                </form>
+                    </div>
+                </div>
+            </div>
+            <% }else if(mode==='multi' && step==='player2' ){%>
+                <div class="container">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-6">
+                            <h1>Hello, <%= player2Name %>!</h2>
+                                    <h2 class="mt-5">Choose your move:</h2>
+                                    <form action="/multiPlay/player2Choice" method="post" class="mt-3">
+                                        <button type="submit" name="choice" value="rock"
+                                            class="btn btn-secondary mr-3">Rock</button>
+                                        <button type="submit" name="choice" value="paper"
+                                            class="btn btn-secondary mr-3">Paper</button>
+                                        <button type="submit" name="choice" value="scissors"
+                                            class="btn btn-secondary">Scissors</button>
+                                    </form>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+                    <footer class="footer mt-auto py-3 text-center sticky-bottom">
+                        <span>© 2023 Rock Paper Scissors Game. All rights reserved.</span>
+                    </footer>
 </body>
 
 </html>
