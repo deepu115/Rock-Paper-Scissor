@@ -1,5 +1,3 @@
-import Player from './Player.js';
-
 class Game {
     constructor(player1Name, player2Name) {
         this.player1Name = player1Name;

@@ -7,12 +7,12 @@
     <link href="/css/styles.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml"
         href="https://images.squarespace-cdn.com/content/v1/618037d25050485b61e7f62d/271f0feb-c872-4eb6-b918-3e9c8e38443c/Rock+Paper+Scissors+Logo.png" />
-    <meta charset="utf-8" content="width=device-width">
+    <meta charset="utf-8" content="width=device-width" initial-scale="1.0">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body style="height: 100%">
-    <nav class="navbar sticky-top justify-content-center">
+    <nav class="navbar justify-content-center">
         <img src="https://images.squarespace-cdn.com/content/v1/618037d25050485b61e7f62d/271f0feb-c872-4eb6-b918-3e9c8e38443c/Rock+Paper+Scissors+Logo.png"
             alt="logo" width="44" height="40" class="d-inline-block align-text-top">
         <a class="nav-link active" aria-current="page" href="/"><span>Rock Paper Scissors</span></a>
@@ -22,7 +22,7 @@
             <div class="col-md-6 text-center">
                 <% if (mode==='single' ) { %>
                     <h1>Welcome!</h1>
-                    <h2 class="mt-5">Enter your name:</h2>
+                    <h2 class="mt-5">Enter Your Name:</h2>
                     <form action="/setName" method="post" class="mt-3">
                         <div class="form-group">
                             <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
@@ -31,7 +31,7 @@
                     </form>
                     <% } else { %>
                         <h1>Welcome to Multiplayer Mode!</h1>
-                        <h2 class="mt-5">Enter names for both players:</h2>
+                        <h2 class="mt-5">Enter Names of the Players:</h2>
                         <form action="/setMultiNames" method="post" class="mt-3">
                             <div class="form-group">
                                 <input type="text" id="player1Name" name="player1Name" class="form-control mb-2"
@@ -39,13 +39,13 @@
                                 <input type="text" id="player2Name" name="player2Name" class="form-control"
                                     placeholder="Player 2 Name" required>
                             </div>
-                            <button type="submit" class="btn btn-info mt-3">Start Multiplayer Game</button>
+                            <button type="submit" class="btn btn-primary mt-3">Start Game</button>
                         </form>
                         <% } %>
             </div>
         </div>
     </div>
-    <footer class="footer mt-auto py-3 text-center sticky-bottom">
+    <footer class="footer mt-auto py-3 text-center ">
         <span>© 2023 Rock Paper Scissors Game. All rights reserved.</span>
     </footer>
 </body>
