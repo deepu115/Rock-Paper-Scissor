@@ -16,7 +16,7 @@ router.get('/multiPlayer', (req, res) => {
 router.post('/setMultiNames', (req, res) => {
     req.app.locals.player1Name = req.body.player1Name;
     req.app.locals.player2Name = req.body.player2Name;
-    res.redirect('/multiPlay');
+    res.redirect('/multiPlay/player1Choice');
 });
 
 export default router;

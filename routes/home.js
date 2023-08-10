@@ -7,9 +7,6 @@ router.get('/', (req, res) => {
 router.post('/selectMode', (req, res) => {
     const selectedMode = req.body.mode;
     const redirectPath = selectedMode === 'single' ? '/singlePlayer' : '/multiPlayer';
-    console.log(`Selected mode: ${req.body.mode}`);
-    console.log(`Redirecting to: ${redirectPath}`);
-
     res.redirect(redirectPath);
 });
 

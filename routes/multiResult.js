@@ -2,7 +2,6 @@ import express from 'express';
 import Game from '../src/Game.js';
 const router = express.Router();
 
-const game = new Game();
 
 router.get('/multiResult', (req, res) => {
     const player1Name = req.app.locals.player1Name;
