@@ -28,11 +28,6 @@ So that I can see my name
 I would like to register my name before playing an online game
 ```
 
-## Domain Model
-
-|Object |Properties      | Messages     | Output    |
-|-------|--------------- |------------  |-----------|
-|Player |Name@string     |registerName()| @String   |
 
 ```
 As a DFAT member
@@ -41,12 +36,7 @@ I would like to be able to play rock/paper/scissors
 
 ```
 
-## Domain Model
 
-|Object |Properties      | Messages     | Output    |
-|-------|--------------- |------------  |-----------|
-|Player |Option@string   |chooseOption()| @String   |
-|Game   |                |play()        | @player   |
 
 Hints on functionality
 
